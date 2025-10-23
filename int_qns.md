@@ -242,25 +242,119 @@
              export class GreetingComponent {
                userName = 'Satheesh';
              }
-           ```
+            ```
+            
        - 2. **External Template** – Stored in a separate `.html` file and referenced using the `templateUrl` property.
-         ```typescript
-             import { Component } from '@angular/core';
+              ```typescript
+                           import { Component } from '@angular/core';
 
-             @Component({
-               selector: 'app-dashboard',
-               templateUrl: './dashboard.component.html'
-             })
-             export class DashboardComponent {
-               title = 'Admin Dashboard';
-             }
-        ```
+                           @Component({
+                             selector: 'app-dashboard',
+                             templateUrl: './dashboard.component.html'
+                           })
+                           export class DashboardComponent {
+                             title = 'Admin Dashboard';
+                           }
+            ```
+                ```
+               ```
 
-   # What are Annotations?
-    - **Annotations** in Angular are a form of **metadata** attached to classes using **decorators** (like `@Component`, `@NgModule`, etc.).  
-    - They **tell Angular how to process a class** — whether it’s a component, directive, module, or service — and what configuration it needs.
-    - In simpler terms:  
+  # What are Annotations?
+   - **Annotations** in Angular are a form of **metadata** attached to classes using **decorators** (like `@Component`, `@NgModule`, etc.).  
+   - They **tell Angular how to process a class** — whether it’s a component, directive, module, or service — and what configuration it needs.
+   - This metadata informs Angular about how to treat those classes.
+   - In simpler terms:  
            > 🧠 **Annotations describe how a class should behave within the Angular framework.**
+    ```typescript
+       @Component({
+       selector: 'app-header',
+       templateUrl: './header.component.html',
+       styleUrls: ['./header.component.css']
+       })
+       export class HeaderComponent {
+       // Component logic here
+       }
+    ```
+     Here, @Component is an annotation that marks the HeaderComponent class as an Angular component and provides additional information, such as the template and associated styles.
+
+# What are Directives?
+ - **Directives** in Angular are special classes that let you **manipulate the DOM** or **extend the behavior of elements** in your application.
+ - HTML that tell Angular how to modify the appearance, behavior, and layout of the page elements. There are 3 major types of Directives:
+ - They add extra functionality to existing HTML elements, components, or attributes — helping make your UI more dynamic and interactive.
+ - Angular provides **three main types** of directives:
+    -  ### 1. **Component Directives**
+       - Technically, **every component is a directive** with its own **template**.
+       - Used to create reusable UI blocks.
+       - Declared with the `@Component()` decorator.
+     
+   - ### 2. Structural Directives
+      - Used to add or remove elements from the DOM dynamically.
+      - They change the structure of the view.
+      - Identified by a * prefix (e.g., *ngIf, *ngFor, *ngSwitchCase).
+      ```html
+       <p *ngIf="isLoggedIn">Welcome back!</p>
+
+        <ul>
+           <li *ngFor="let item of items">{{ item }}</li>
+        </ul>
+       ```
+  - ### 3. Attribute Directives
+    - Used to change the appearance or behavior of an existing element, component, or another directive.
+    - They don’t add or remove elements, just modify how they look or act.
+    - Built-in: ngClass, ngStyle
+     
+    # ⚙️ Built-In Angular Directives
+
+| **Type** | **Directive** | **Purpose** |
+|-----------|----------------|--------------|
+| **Structural** | `*ngIf` | Conditionally includes an element in the DOM. |
+| **Structural** | `*ngFor` | Repeats a template for each item in a list. |
+| **Structural** | `*ngSwitch` | Displays elements based on a switching condition. |
+| **Attribute** | `ngClass` | Adds or removes CSS classes dynamically. |
+| **Attribute** | `ngStyle` | Applies dynamic inline styles. |
+| **Attribute** | `ngModel` | Enables two-way data binding on form inputs. |
+
+---
+
+# 🧾 Summary
+
+| **Directive Type** | **Example** | **Purpose** |
+|--------------------|-------------|--------------|
+| **Component** | `@Component({...})` | Defines a reusable UI block with template & logic. |
+| **Structural** | `*ngIf`, `*ngFor` | Changes DOM structure by adding/removing elements. |
+| **Attribute** | `[ngStyle]`, `[ngClass]`, custom | Modifies existing element’s appearance or behavior. |
+
+
+
+# AOT Compiler?
+ - Ahead of Time compiler converts the angular HTML and Typescript code into javascript suring build phase
+ - instead of combiling code in the browser (JIT) compilation
+
+# What are the Components in Angular?
+ - A **Component** in Angular is the **building block** of the application’s UI.
+ - It controls a specific **view (HTML template)** and contains both **logic (TypeScript code)** and **data (properties and methods)** that define how that view behaves.
+ - ## 🏗️ Structure of a Component - Each Angular component consists of **three main parts**:
+   -  1. **Template (HTML)** – Defines the **view** (what the user sees).
+   -  2. **Class (TypeScript)** – Contains the **logic and data** of the component.
+   -  3. **Metadata (Decorator)** – Provides **configuration** information to Angular using the `@Component()` decorator.
+
+
+# How angular works?
+# ⚙️ How Does an Angular Application Work?
+
+An Angular application works through several stages — from **bootstrapping** to **rendering**, **data binding**, and **DOM updates** — using modules, components, and services.
+
+---
+
+## 🧠 Mermaid Diagram: Angular Application Workflow
+
+
+
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/3723e06b-1208-4097-9b21-7c09520ef015" />
+
+
+
+  
     
    
 
