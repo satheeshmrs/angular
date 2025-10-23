@@ -242,9 +242,9 @@
              export class GreetingComponent {
                userName = 'Satheesh';
              }
-            ```
+           ```
        - 2. **External Template** – Stored in a separate `.html` file and referenced using the `templateUrl` property.
-            ```typescript
+         ```typescript
              import { Component } from '@angular/core';
 
              @Component({
@@ -254,9 +254,15 @@
              export class DashboardComponent {
                title = 'Admin Dashboard';
              }
-             ```
+        ```
 
-   # 
+   # What are Annotations?
+    - **Annotations** in Angular are a form of **metadata** attached to classes using **decorators** (like `@Component`, `@NgModule`, etc.).  
+    - They **tell Angular how to process a class** — whether it’s a component, directive, module, or service — and what configuration it needs.
+    - In simpler terms:  
+           > 🧠 **Annotations describe how a class should behave within the Angular framework.**
+    
+   
 
 
 
